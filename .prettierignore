@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.angular
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Log files
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Generated files
+*.min.js
+*.min.css
+
+# Package lock files
+package-lock.json
+yarn.lock
