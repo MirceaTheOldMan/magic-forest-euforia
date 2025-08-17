@@ -1,11 +1,135 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="container my-5">
+  <h1 class="text-center mb-4">{{ title() }} - ng-bootstrap Demo</h1>
+
+  <!-- Bootstrap Buttons -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>Bootstrap Buttons</h3>
+      <button type="button" class="btn btn-primary me-2">Primary</button>
+      <button type="button" class="btn btn-secondary me-2">Secondary</button>
+      <button type="button" class="btn btn-success me-2">Success</button>
+      <button type="button" class="btn btn-warning me-2">Warning</button>
+      <button type="button" class="btn btn-danger me-2">Danger</button>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Alert -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Alert</h3>
+      <ngb-alert type="success" [dismissible]="true">
+        <strong>Success!</strong> This is an ng-bootstrap alert component.
+      </ngb-alert>
+      <ngb-alert type="info" [dismissible]="true">
+        <strong>Info!</strong> ng-bootstrap is working perfectly!
+      </ngb-alert>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Accordion -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Accordion</h3>
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>First Panel</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <p>This is the content of the first accordion panel.</p>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Second Panel</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <p>This is the content of the second accordion panel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Dropdown -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Dropdown</h3>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Toggle dropdown
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Progress Bar -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Progress Bar</h3>
+      <ngb-progressbar type="success" [value]="75" [striped]="true" [animated]="true">
+        <span>75%</span>
+      </ngb-progressbar>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Rating -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Rating</h3>
+      <ngb-rating [(rate)]="currentRate" [readonly]="false" [max]="5"></ngb-rating>
+      <p>Rate: {{ currentRate }}</p>
+    </div>
+  </div>
+
+  <!-- ng-bootstrap Modal Trigger -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3>ng-bootstrap Modal</h3>
+      <button type="button" class="btn btn-outline-dark" (click)="openModal(content)">
+        Launch demo modal
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Template -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>This is a modal powered by ng-bootstrap!</p>
+    <p>It uses Angular components instead of jQuery.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">
+      Save changes
+    </button>
+  </div>
+</ng-template>
+
+<router-outlet />
 
 <style>
   :host {
